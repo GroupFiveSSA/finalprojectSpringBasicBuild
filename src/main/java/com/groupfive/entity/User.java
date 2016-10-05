@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,7 +15,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="userId")
 	private int userId;
 	
@@ -27,8 +28,11 @@ public class User implements Serializable {
 	@Column(name="email")	
 	private String email;
 	
-	@Column(name="address")	
-	private String address;
+	@Column(name="addressline1")	
+	private String addressline1;
+	
+	@Column(name="addressline2")	
+	private String addressline2;
 	
 	@Column(name="city")	
 	private String city;
@@ -74,12 +78,20 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getAddressline1() {
+		return addressline1;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAddressline1(String addressline1) {
+		this.addressline1 = addressline1;
+	}
+
+	public String getAddressline2() {
+		return addressline2;
+	}
+
+	public void setAddressline2(String addressline2) {
+		this.addressline2 = addressline2;
 	}
 
 	public String getCity() {

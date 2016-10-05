@@ -37,7 +37,8 @@ public class UserDAO implements IUserDAO {
 		record.setFirstName(user.getFirstName());
 		record.setLastName(user.getLastName());
 		record.setEmail(user.getEmail());
-		record.setAddress(user.getAddress());
+		record.setAddressline1(user.getAddressline1());
+		record.setAddressline2(user.getAddressline2());
 		record.setCity(user.getCity());
 		record.setState(user.getState());
 		record.setZipcode(user.getZipcode());
