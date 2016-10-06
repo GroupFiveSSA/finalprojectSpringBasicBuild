@@ -24,27 +24,19 @@ public class WebController {
 //		}//end if statement
 		mv.setViewName("banrhome");
 		return mv;
-	}//endModelAndView Developer Contact Page
+	}//endModelAndView banrhome
 	
-	
-	
-	@RequestMapping("/developercontact")
-	public ModelAndView developercontact(HttpServletRequest request, ModelAndView mv){
+	@RequestMapping("/hudlink")
+	public ModelAndView hudlink(HttpServletRequest request, ModelAndView mv){
 //		if(request.getParameter("name") != null){
 //			mv.addObject("name", request.getParameter("name"));
 //		}//end if statement
-		mv.setViewName("developercontact");
+		mv.setViewName("hudlink");
 		return mv;
-	}//endModelAndView Developer Contact Page
+	}//endModelAndView hudlink
 	
-	@RequestMapping("/fieldofficelocation")
-	public ModelAndView fieldofficelocation(HttpServletRequest request, ModelAndView mv){
-//		if(request.getParameter("name") != null){
-//			mv.addObject("name", request.getParameter("name"));
-//		}//end if statement
-		mv.setViewName("fieldofficelocation");
-		return mv;
-	}//endModelAndView Developer Contact Page
+	
+	
 	
 
 
