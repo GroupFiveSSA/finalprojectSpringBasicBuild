@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>User Account Page - BANR</title>
+
+    <!-- Modal Jquery -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
+
+
+    
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#002A5C">
+        <div class="container" style="height: 96px">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/banr.jpg" align="middle" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" align="right" color="white">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                    <li>
+                    	<a href="#" id="linkThatOpensModal">Manage Profile</a>
+                    </li>                    	
+                    <li>
+                    	<a href="#" >Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    
+
+        <hr>
+
+
+	
+
+
+<!-- Footer -->
+<footer>
+<div class="row">
+<div class="col-lg-12">
+<p>Copyright &copy; groupFive 2016</p>
+</div>
+</div>
+</footer>
+
+<div style="display:none" "background-color:#002A5C" "color:white" id="myModal" title="Update Profile">
+	
+
+<div class="panel panel-info" >
+	
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-3 col-lg-3 " align="center"> <img alt="Banner" src="file:///C:/Users/admin/Desktop/VonBranch/realactualproject/pages/Vons/images/1icon.jpg" class="img-circle img-responsive"> 
+			</div>
+			<div class=" col-md-9 col-lg-9 "> 
+			<table class="table table-user-information">
+				<tbody>
+					<tr>
+						<td>Email:</td>
+						<td>crisv76@icloud.com</td>
+					</tr> 
+					<tr>
+						<td>Password:</td>
+						<td>P@sswor1</td>
+					</tr>                                       
+					<tr>
+						<td>First Name:</td>
+						<td>Chris</td>
+					</tr>
+					<tr>
+						<td>Last Name:</td>
+						<td>Vaughan</td>
+					</tr>
+					<tr>
+						<td>Address Line 1:</td>
+						<td>2494 Quick St.</td>
+					</tr>
+					<tr>
+						<td>Address Line 2:</td>
+						<td>#304</td>
+					</tr>
+					<tr>
+						<td>City:</td>
+						<td>Herndon</td>
+					</tr>
+					<tr>
+						<td>State:</td>
+						<td>VA</td>
+					</tr>
+					<tr>
+						<td>Zip Code:</td>
+						<td>20171</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+	
+	$(function(){
+
+		$("#linkThatOpensModal").click(function(){
+			$( "#myModal" ).dialog({
+				width:700,
+				 buttons: {
+		        "Update": function() {
+		          $( this ).dialog( "close" );
+		        },
+		        Cancel: function() {
+		          $( this ).dialog( "close" );
+        }
+      }
+			});
+		})
+
+		
+
+	})
+
+</script>
+
+</body>
+
+</html>
