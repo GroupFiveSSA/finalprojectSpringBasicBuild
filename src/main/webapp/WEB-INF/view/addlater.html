@@ -1,42 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>BANR - Basic Assistance Needs Resource</title>
-
-    <!-- Bootstrap Core CSS -->
+<title>BANR Home</title>
+<!--bootstrap-->
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous"></link>
+     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/small-business.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous"></link>
-	<!-- Angular Material style sheet -->
-	<link rel="stylesheet"
+<!-- Angular Material style sheet -->
+<link rel="stylesheet"
     href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css"></link>
-
 </head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#002A5C">
+<body ng-app="angularApp">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#002A5C">
         <div class="container" style="height: 96px">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -44,10 +25,10 @@
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="/icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img src="images/banr.jpg" align="middle" alt="">
+                    <img src="images/BANR.jpg" align="middle" alt="">
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,134 +55,231 @@
 
         <!-- Heading Row -->
         <div class="row">
-            <div class="col-md-8">
-                <img class="img-responsive img-rounded" src="images/people.jpg" height="350" width="900" alt="">
+            <div class="col-md-8"><br><br><br><br><br>
+                <img class="img-responsive img-rounded" src="../images/people.jpg" height="350" width="900" alt="">
             </div>
             <!-- /.col-md-8 -->
-            <div class="col-md-4">
+            <div class="col-md-4"><br><br><br><br><br><br>
                 <h1>Basic Assistance Needs Resource (BANR)</h1>
-                <p>Our mission is to provide those in need with the resources necessary to address their needs.  Please sign in below to use this free service.</p>
-                <a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Open Login Modal</a>
+                <p>We provide the connections needed for those in need to find vital community resources.  Please create an account or sign in below to use this free service.</p>
+               <div ng-controller="UserCtrl">
+    
+        <button ng-click="loginButtonClick()" class="btn btn-primary">Login</button>
+        <button ng-click="addButtonClick()" class="btn btn-primary">Register
+            </button>
+       
+ 
+        <div style="display: none">
+            <div class="md-dialog-container" id="userForm">
+            
+                <md-dialog><br>
+                <center><h2 style ="color:#002A5C">
+                <img src="../images/3icon.jpg"style= "width:40px;height:40px;">&nbsp Register User</h2></center><br>
+                 <div style="background-color:#002A5C; color:white">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                    <br><br>
+                        <label for="firstName" class="col-sm-2 control-label">First
+                            Name</label>
+                        <div class="col-sm-5">
+                            <input ng-model="user.firstName" type="text"
+                                class="form-control" id="firstName" name="firstName"
+                                placeholder="First Name" required="true"></input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="col-sm-2 control-label">Last
+                            Name</label>
+                        <div class="col-sm-5">
+                            <input ng-model="user.lastName" type="text"
+                                class="form-control" id="lastName" name="lastName"
+                                placeholder="Last Name" required="true"></input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">Email
+                            Address</label>
+                        <div class="col-sm-5">
+                            <input type="email" ng-model="user.email"
+                                class="form-control" id="email" name="email"
+                                placeholder="user@example.com" required="true"></input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="addressline1" class="col-sm-2 control-label">Address Line 1
+                            </label>
+                        <div class="col-sm-5">
+                            <input ng-model="user.addressline1" type="text"
+                                class="form-control" id="addressline1" name="addressline1"
+                                placeholder="123 Anywhere Street"></input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="addressline2" class="col-sm-2 control-label">Address Line 2
+                            </label>
+                        <div class="col-sm-5">
+                            <input ng-model="user.addressline2" type="text"
+                                class="form-control" id="addressline2" name="addressline2"
+                                placeholder="Apartment C"></input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="city" class="col-sm-2 control-label">City</label>
+                        <div class="col-sm-5">
+                            <input ng-model="user.city" type="text"
+                                class="form-control" id="city" name="city"
+                                placeholder="City" required="true"></input>
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="state" class="col-sm-2 control-label">State</label>
+                        <div class="col-sm-5">
+                            <input ng-model="user.state" type="text"
+                                class="form-control" id="state" name="state"
+                                placeholder="State" required="true"></input>
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="zipcode" class="col-sm-2 control-label">Zip Code</label>
+                        <div class="col-sm-5">
+                            <input ng-model="user.zipcode" type="text"
+                                class="form-control" id="zipcode" name="city"
+                                placeholder="Zip Code" required="true"></input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-5">
+                            <input ng-model="user.password" type="text"
+                                class="form-control" id="password" name="password"
+                                aria-describedby="helpBlock" required=""></input> <span
+                                id="helpBlock" class="help-block" style ="color:white">Password should be at
+                                least 8 characters, 1 upppercase, 1 lowercase, 1 special
+                                character, and one number</span>
+                        </div>
+                    </div>
+                  
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <span ng-show="addFlag"><button ng-click="addUser()"
+                                    type="submit" class="btn btn-success">Register</button></span>
+                       </div>
+                       </div>
+                    </div>
+                </form>
+                </md-dialog>
+            </div>
+   
+     </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->  </nav>
     </div>
 </div>
-<!-- END # BOOTSNIP INFO -->
+<hr>
+   
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js">
+</script>
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.js"></script>
+    <script
+        src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
+    <script
+        src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-aria.min.js"></script>
+    <script
+        src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script
+        src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script type="text/javascript">
+var app = angular.module('angularApp', ['ngResource', 'ngMaterial']);
+app.factory('UserService', ['$resource', function ($resource) {
+    return $resource(
+        'http://localhost:8080/user/:userId',
+        {userId: '@uid'},
+        {update: {method: 'PUT'}}
+    );
+}]);
+app.controller('UserCtrl', ['$scope', 'UserService', '$mdDialog',
+    function($scope, UserService, $mdDialog) {
+        $scope.users = [];
+        $scope.user  = new UserService();
+        $scope.action = "Add";
+        $scope.addFlag = true;
+        $scope.editFlag = false;
+        $scope.getAllUsers = function(){
+            $scope.users = UserService.query()
+        }
+        $scope.getAllUsers();
+        $scope.deleteUser = function(id){
+            $scope.user = UserService.delete({ userId: id},
+                function() {
+                    $scope.user = new UserService();
+                    $scope.getAllUsers(); 
+                });
+        }
+        $scope.addUser = function(){
+          $scope.user.$save(
+              function(user){ 
+                 $scope.user = new UserService();
+                 $scope.getAllUsers();
+                 $mdDialog.hide();
+              },
+              function(err){
+                 console.log(err.status);
+              }
+          );     
+        }; 
+        $scope.editUser = function(id){
+            $scope.user = UserService.get({ userId: id}, function() { 
+                $scope.showForm();
+                $scope.action = "Update"
+                $scope.addFlag = false;
+                $scope.editFlag = true;
+            });
+        };  
+        $scope.updateUser = function(id){
+            $scope.user.$update({ userId: id},
+                function(user){
+                    $scope.user = new UserService();
+                    $scope.getAllUsers();
+                    $mdDialog.hide();
+                }
+            )
+        };
+        $scope.addButtonClick = function(){
+            $scope.showForm();
+            $scope.user = new UserService();
+            $scope.addFlag = true;
+            $scope.editFlag = false;
+            $scope.action = "Add";
+        }
+        $scope.showForm = function(ev) {
+            $mdDialog.show({
+              contentElement: '#userForm',
+              parent: angular.element(document.body),
+              targetEvent: ev,
+              clickOutsideToClose: true
+            });
+          
+        };
+        
+	}]
+)
+</script>
+<!-- Content Row -->
 
-<!-- BEGIN # MODAL LOGIN -->
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" align="center">
-                    <img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                    </button>
-                </div>
-                
-                <!-- Begin # DIV Form -->
-                <div id="div-forms">
-                
-                    <!-- Begin # Login Form -->
-                    <form id="login-form">
-                        <div class="modal-body">
-                            <div id="div-login-msg">
-                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                <span id="text-login-msg">Type your username and password.</span>
-                            </div>
-                            <input id="login_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
-                            <input id="login_password" class="form-control" type="password" placeholder="Password" required>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Remember me
-                                </label>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-                            </div>
-                            <div>
-                                <button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
-                                <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- End # Login Form -->
-                    
-                    <!-- Begin | Lost Password Form -->
-                    <form id="lost-form" style="display:none;">
-                        <div class="modal-body">
-                            <div id="div-lost-msg">
-                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                <span id="text-lost-msg">Type your e-mail.</span>
-                            </div>
-                            <input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
-                        </div>
-                        <div class="modal-footer">
-                            <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
-                            </div>
-                            <div>
-                                <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
-                                <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- End | Lost Password Form -->
-                    
-                    <!-- Begin | Register Form -->
-                    <form id="register-form" style="display:none;">
-                        <div class="modal-body">
-                            <div id="div-register-msg">
-                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                <span id="text-register-msg">Register an account.</span>
-                            </div>
-                              <input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
-                            <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
-                            <input id="register_password" class="form-control" type="password" placeholder="Password" required>
-                            <input id="register_firstName" class="form-control" type="text" placeholder="First Name" required>
-                            <input id="register_lastName" class="form-control" type="text" placeholder="Last Name" required>
-                            <input id="register_addressline1" class="form-control" type="text" placeholder="Address Line 1" required>
-                            <input id="register_addressline2" class="form-control" type="text" placeholder="Address Line 2" required>
-                            <input id="register_city" class="form-control" type="text" placeholder="City" required>
-                            <input id="register_state" class="form-control" type="text" placeholder="State" required>
-                            <input id="register_zip" class="form-control" type="text" placeholder="Zip" required>
-                        </div>
-                        <div class="modal-footer">
-                            <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
-                            </div>
-                            <div>
-                                <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
-                                <button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- End | Register Form -->
-                    
-                </div>
-                <!-- End # DIV Form -->
-                
-            </div>
-        </div>
-    </div>
-    <!-- END # MODAL LOGIN -->
-            </div>
-            <!-- /.col-md-4 -->
-        </div>
-        <!-- /.row -->
 
-        <hr>
 
-    
 
-        <!-- Content Row -->
         <div class="row">
             <div class="col-md-4 portfolio-item">
                 <a href="#">
                     <img src="images/house.jpg" height="150" width="200"  alt="">
                 </a>
                 <h2>Housing</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+                <p>Using your information, we will provide contact information and directions to local HUD Counseling Offices that can assist you in finding a home.</p>
                 <a class="btn btn-default" href="#">More Info</a>
             </div>
             <!-- /.col-md-4 -->
@@ -236,102 +314,12 @@
         </footer>
 
     </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
+    
+      <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
-    <script>
-    $(function() {
-    
-    var $formLogin = $('#login-form');
-    var $formLost = $('#lost-form');
-    var $formRegister = $('#register-form');
-    var $divForms = $('#div-forms');
-    var $modalAnimateTime = 300;
-    var $msgAnimateTime = 150;
-    var $msgShowTime = 2000;
-
-    $("form").submit(function () {
-        switch(this.id) {
-            case "login-form":
-                var $lg_username=$('#login_username').val();
-                var $lg_password=$('#login_password').val();
-                if ($lg_username == "ERROR") {
-                    msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
-                } else {
-                    msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
-                }
-                return false;
-                break;
-            case "lost-form":
-                var $ls_email=$('#lost_email').val();
-                if ($ls_email == "ERROR") {
-                    msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "error", "glyphicon-remove", "Send error");
-                } else {
-                    msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "success", "glyphicon-ok", "Send OK");
-                }
-                return false;
-                break;
-            case "register-form":
-                var $rg_username=$('#register_username').val();
-                var $rg_email=$('#register_email').val();
-                var $rg_password=$('#register_password').val();
-                if ($rg_username == "ERROR") {
-                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Register error");
-                } else {
-                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Register OK");
-                }
-                return false;
-                break;
-            default:
-                return false;
-        }
-        return false;
-    });
-    
-    $('#login_register_btn').click( function () { modalAnimate($formLogin, $formRegister) });
-    $('#register_login_btn').click( function () { modalAnimate($formRegister, $formLogin); });
-    $('#login_lost_btn').click( function () { modalAnimate($formLogin, $formLost); });
-    $('#lost_login_btn').click( function () { modalAnimate($formLost, $formLogin); });
-    $('#lost_register_btn').click( function () { modalAnimate($formLost, $formRegister); });
-    $('#register_lost_btn').click( function () { modalAnimate($formRegister, $formLost); });
-    
-    function modalAnimate ($oldForm, $newForm) {
-        var $oldH = $oldForm.height();
-        var $newH = $newForm.height();
-        $divForms.css("height",$oldH);
-        $oldForm.fadeToggle($modalAnimateTime, function(){
-            $divForms.animate({height: $newH}, $modalAnimateTime, function(){
-                $newForm.fadeToggle($modalAnimateTime);
-            });
-        });
-    }
-    
-    function msgFade ($msgId, $msgText) {
-        $msgId.fadeOut($msgAnimateTime, function() {
-            $(this).text($msgText).fadeIn($msgAnimateTime);
-        });
-    }
-    
-    function msgChange($divTag, $iconTag, $textTag, $divClass, $iconClass, $msgText) {
-        var $msgOld = $divTag.text();
-        msgFade($textTag, $msgText);
-        $divTag.addClass($divClass);
-        $iconTag.removeClass("glyphicon-chevron-right");
-        $iconTag.addClass($iconClass + " " + $divClass);
-        setTimeout(function() {
-            msgFade($textTag, $msgOld);
-            $divTag.removeClass($divClass);
-            $iconTag.addClass("glyphicon-chevron-right");
-            $iconTag.removeClass($iconClass + " " + $divClass);
-  		}, $msgShowTime);
-    }
-});
-</script>
 </body>
-
 </html>
+      	

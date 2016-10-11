@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class WebController {
-	@RequestMapping("/")
+	@RequestMapping("/index")
 	public ModelAndView home(HttpServletRequest request, ModelAndView mv){
 //		if(request.getParameter("name") != null){
 //			mv.addObject("name", request.getParameter("name"));
@@ -26,7 +26,25 @@ public class WebController {
 		return mv;
 	}//endModelAndView Developer Contact Page
 	
+	@RequestMapping("/edituser")
+	public ModelAndView edituser(HttpServletRequest request, ModelAndView mv){
+//		if(request.getParameter("name") != null){
+//			mv.addObject("name", request.getParameter("name"));
+//		}//end if statement
+		mv.setViewName("edituser");
+		return mv;
+	}//endModelAndView Developer Contact Page
 	
+	@RequestMapping("/addlater")
+	public ModelAndView addlater(HttpServletRequest request, ModelAndView mv){
+//		if(request.getParameter("name") != null){
+//			mv.addObject("name", request.getParameter("name"));
+//		}//end if statement
+		mv.setViewName("addlater");
+		return mv;
+	}//endModelAndView Developer Contact Page
+	
+
 	
 	@RequestMapping("/developercontact")
 	public ModelAndView developercontact(HttpServletRequest request, ModelAndView mv){
