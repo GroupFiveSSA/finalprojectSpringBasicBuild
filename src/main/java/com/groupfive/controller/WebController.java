@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class WebController {
-	@RequestMapping("/")
+	@RequestMapping("/index")
 	public ModelAndView home(HttpServletRequest request, ModelAndView mv){
 //		if(request.getParameter("name") != null){
 //			mv.addObject("name", request.getParameter("name"));
