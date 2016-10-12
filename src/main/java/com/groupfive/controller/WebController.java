@@ -64,6 +64,14 @@ public class WebController {
 		return mv;
 	}//endModelAndView Developer Contact Page
 	
+		@RequestMapping("/PostLoginPageforWidgets")
+	public ModelAndView PostLoginPageforWidgets(HttpServletRequest request, ModelAndView mv){
+//		if(request.getParameter("name") != null){
+//			mv.addObject("name", request.getParameter("name"));
+//		}//end if statement
+		mv.setViewName("PostLoginPageforWidgets");
+		return mv;
+	}//endModelAndView Developer Contact Page
 
 
 }//end class
